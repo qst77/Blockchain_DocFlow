@@ -1,0 +1,85 @@
+<html lang="en">
+  <head>
+
+
+
+
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Выше 3 Мета-теги ** должны прийти в первую очередь в голове; любой другой руководитель контент *после* эти теги -->  
+    <title>Главная</title>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!-- Bootstrap -->  
+    <link href="css/bootstrap.min.css" rel="stylesheet"> 
+    <script src="js/blockchaincontracts.js"> </script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+   <script>
+     window.addEventListener('load', function(){
+
+            var status;
+            localWeb3.eth.getCoinbase(function (err, account) {
+                if (err === null) {
+                        ContractInstance2.GetPersonalInfo(account, function(error, personalinfo){
+                            if (!error){
+                               $('#success_hash1').html("Здравствуйте, " + personalinfo[2] + " " + personalinfo[3] + "!");
+                                                    $("#success_box_hash1");
+
+                            } else {
+                                console.log(error);
+                            }
+                        })
+
+
+                
+
+                }
+            });
+
+
+
+
+        })
+   </script>
+
+
+    </head>
+  <body>
+    <div id="raz" class="page-header">
+  <h1 >Главная страница сотрудника отдела </h1>
+
+</div>
+
+
+
+<ul class="nav nav-pills nav-justified">
+  <li role="presentation" class="active"><a href="UserMainPage.html">Главная</a></li>
+  <li role="presentation"><a href="UserDocInWorkPage.html">Документы ожидающие подписания</a></li>
+  <li role="presentation"><a href="UserDocSeenPage.html">Просмотренные документы</a></li>
+  <li role="presentation"><a href="UserDownloadPage.html">Загрузка новых документов</a></li>
+  </ul>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+
+
+   
+</div>
+
+         <div id='success_box_hash1'  class="text" >
+      <h3 id='success_hash1' ></h3>
+      <h5 >Хорошего рабочего дня!</h5>
+</div>
+
+   
+        <!-- на jQuery (необходим для Bootstrap - х JavaScript плагины) -->  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Включают все скомпилированные плагины (ниже), или включать отдельные файлы по мере необходимости -->  
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
